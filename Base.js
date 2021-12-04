@@ -65,7 +65,7 @@ function checkMatch()
   }
   else
     return false;
-  //scoreDisplay.innerHTML = score;
+  scoreDisplay.innerHTML = score;
 }
 
 
