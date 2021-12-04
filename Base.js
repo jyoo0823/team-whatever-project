@@ -130,15 +130,15 @@ function statsGame(){
 // reset position of frog at the start of the game
 function resetFroggo()
 {
-	document.getElementById("froggo").style.top = '200px';
-	document.getElementById("froggo").style.left = '0px'; 
+    document.getElementById("froggo").style.top = '200px';
+    document.getElementById("froggo").style.left = '0px'; 
 
 }
 
 // move the frog up in increments
 function moveFroggo()
 {
-	var obj = document.getElementById("froggo");
-	 var topVal = parseInt(obj.style.left, 10);
-	 obj.style.left = (topVal + 100) + "px";
+   var obj = document.getElementById("froggo");
+   var topVal = parseInt(obj.style.left, 10);
+   obj.style.left = (topVal + 100) + "px";
 }
