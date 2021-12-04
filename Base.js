@@ -1,3 +1,5 @@
+window.addEventListener('load', initialize);
+
 // global variables we're using in functions
 // let is a keyword that says variable is prone to change (i.e. opposite of const)
 let score = 0;
