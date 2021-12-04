@@ -75,6 +75,6 @@ function gameTimer()
 // check to see if the game is over
 function checkStatus()
 {
-  if((!isPlaying) && (score === 5;))
+  if((!isPlaying) && (score === 5))
     message.innerHTML = 'Game Over :(';
 }
