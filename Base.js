@@ -28,7 +28,12 @@ const words = [ //CHANGE ALL words TO SENTENCES LATER WHEN WE EDIT
  function initialize()
 {
   showWord(words);
-  wordInput.addEventListener('input', checkMatch);
+  const characters = currentWord.split(" ").map((char) => {
+    const span = document.createElement("span");
+    span.innerText = char;
+    currentWord.appendChild(span);
+    return span;
+  })
   setInterval(checkStatus, 1000);
   setInterval(countdownTimer,1000);
   startGameButton.addEventListener('click',function(event))
@@ -40,14 +45,8 @@ const words = [ //CHANGE ALL words TO SENTENCES LATER WHEN WE EDIT
   if (countdownTimer() == 0){ //checks that countdown is zero
       gameTimer(); //starts timer at end of countdown
   }
-  const characters = currentWord.split(" ").map((char) => {
-    const span = document.createElement("span");
-    span.innerText = char;
-    wordInput.appendChild(span);
-    return span;
-  })
+  wordInput.addEventListener('input', checkMatch);
   const keydown = ({key});
-  cursorMove();
   if (cursorIndex > characters.length){
     statsGame();
   }
@@ -63,10 +62,9 @@ function showWord(words)
 // check if the word inputted is equal to the current word
 function checkMatch()
 {
-  if (wordInput.value === currentWord.innerHTML)
+  if (cursorMove())
   {
     isPlaying = true;
-    showWords(words);
     wordInput.value = ' ';
     score++;
     return true;
@@ -85,7 +83,7 @@ function countdownTimer()
   timeDisplay.innerHTML = countdown;
 }
 
-function gameTimer()
+function gameTimer() //starts the timer of the game
 {
   setInterval(function()
   {
@@ -111,6 +109,7 @@ function cursorMove()
     cursorWord.classList.remove("cursor");
     cursorWord.classList.add("done");
     cursorWord = characters[++cursorIndex];
+    return true;
   }
 }
 
