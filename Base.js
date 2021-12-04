@@ -9,14 +9,13 @@ let isPlaying;
 let cursorIndex = 0;
 
 // these are DOM element is something like a DIV, HTML, BODY element on a page
-// const wordInput = document.querySelector('#input');
-// const currentWord = document.querySelector('#currentsentence');
-// const scoreDisplay = document.querySelector('#scoredisplay');
-// const timeDisplay = document.querySelector('#timedisplay'); //<--we need to make an HTML source for this
-// const scoreTimer = document.querySelector('#timedisplay'); //<-- need to make an HTML source for this
+const wordInput = document.querySelector('#input');
+const currentWord = document.querySelector('#currentsentence');
+const scoreDisplay = document.querySelector('#scoredisplay');
+const timeDisplay = document.querySelector('#timedisplay'); //<--we need to make an HTML source for this
 // const startGameButton = document.querySelector('#button') //<--we're gonna need to make a HTML source for this
-// const message = document.querySelector('FILL IN THE BLANK');
-// const seconds = document.querySelector('FILL IN THE BLANK');
+// const message = document.querySelector('#message');
+// const seconds = document.querySelector('seconds');
 
 // array of words to use
 const words = [ //CHANGE ALL words TO SENTENCES LATER WHEN WE EDIT 
@@ -27,6 +26,7 @@ const words = [ //CHANGE ALL words TO SENTENCES LATER WHEN WE EDIT
 // initialize game
  function initialize()
 {
+  resetFroggo();
   showWord(words);
   const characters = currentWord.split(" ").map((char) => {
     const span = document.createElement("span");
@@ -67,10 +67,14 @@ function checkMatch()
     isPlaying = true;
     wordInput.value = ' ';
     score++;
+    moveFroggo();
     return true;
   }
   else
+  {
+    isPlaying = false;
     return false;
+  }
   scoreDisplay.innerHTML = score;
 }
 
@@ -120,4 +124,21 @@ function statsGame(){
   document.removeEventListener("keydown",keydown);
   startGameButton.className.remove('hide');
   return;
+}
+
+
+// reset position of frog at the start of the game
+function resetFroggo()
+{
+	document.getElementById("froggo").style.top = '200px';
+	document.getElementById("froggo").style.left = '0px'; 
+
+}
+
+// move the frog up in increments
+function moveFroggo()
+{
+	var obj = document.getElementById("froggo");
+	 var topVal = parseInt(obj.style.left, 10);
+	 obj.style.left = (topVal + 100) + "px";
 }
