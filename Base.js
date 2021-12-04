@@ -132,7 +132,6 @@ function resetFroggo()
 {
     document.getElementById("froggo").style.top = '200px';
     document.getElementById("froggo").style.left = '0px'; 
-
 }
 
 // move the frog up in increments
