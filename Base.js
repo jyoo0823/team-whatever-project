@@ -6,18 +6,15 @@ let timer = 0; //timer that runs during the game
 let countdown = 5; //initial countdown timer
 let score = 0;
 let isPlaying;
-//constants for the cursor 
-let const cursorIndex = 0; 
-let  const cursorCharacter = character[cursorIndex];
-cursorCharacter.classList.add("cursor"); 
+let cursorIndex = 0;
 
 // these are DOM element is something like a DIV, HTML, BODY element on a page
-// const wordInput = document.querySelector('FILL IN THE BLANK');
-// const currentWord = document.querySelector('FILL IN THE BLANK');
-// const scoreDisplay = document.querySelector('FILL IN THE BLANK');
-// const timeDisplay = document.querySelector('#time'); //<--we need to make an HTML source for this
-// const scoreTimer = document.querySelector('FILL IN THE BLANK'); //<-- need to make an HTML source for this
-// const startGameButton = document.querySelector('button') //<--we're gonna need to make a HTML source for this
+// const wordInput = document.querySelector('#input');
+// const currentWord = document.querySelector('#currentsentence');
+// const scoreDisplay = document.querySelector('#scoredisplay');
+// const timeDisplay = document.querySelector('#timedisplay'); //<--we need to make an HTML source for this
+// const scoreTimer = document.querySelector('#timedisplay'); //<-- need to make an HTML source for this
+// const startGameButton = document.querySelector('#button') //<--we're gonna need to make a HTML source for this
 // const message = document.querySelector('FILL IN THE BLANK');
 // const seconds = document.querySelector('FILL IN THE BLANK');
 
@@ -43,13 +40,24 @@ const words = [ //CHANGE ALL words TO SENTENCES LATER WHEN WE EDIT
   if (countdownTimer() == 0){ //checks that countdown is zero
       gameTimer(); //starts timer at end of countdown
   }
+  const characters = currentWord.split(" ").map((char) => {
+    const span = document.createElement("span");
+    span.innerText = char;
+    wordInput.appendChild(span);
+    return span;
+  })
+  const keydown = ({key});
+  cursorMove();
+  if (cursorIndex > characters.length){
+    statsGame();
+  }
 }
 
 // choose random words from array
 function showWord(words)
 {
   const randNum = Math.floor(Math.random() * words.length);
-  currentWord.innerHTML = words[randNum];
+  currentWord.innerHTML = words[randNum]; //sets and displays current sentence generated from the array
 }
 
 // check if the word inputted is equal to the current word
@@ -66,18 +74,6 @@ function checkMatch()
   else
     return false;
   scoreDisplay.innerHTML = score;
-}
-
-//changes the color of the character when it is typed
-function cursor()
-{
-  if (wordInput.value === currentWord.innerHTML)
-  {
-    cursorCharacter.classList.remove("cursor");
-    cursorCharacter.classList.add("done");
-    cursorCharacter = characters[++cursorIndex];
-    cursorCharacter.classList.add("cursor"); 
-  } 
 }
 
 //countdown at the beginning of the game
@@ -103,4 +99,26 @@ function checkStatus()
 {
   if((!isPlaying) && (score === 5))
     message.innerHTML = 'Game Over :(';
+}
+
+//movement of the cursor across the sentence
+function cursorMove()
+{
+  let cursorWord = characters[cursorIndex];
+  cursorWord.classList.add("cursor"); //need to add cursor HTML source and CSS
+  if (wordInput.value === cursorWord.innerHTML)
+  {
+    cursorWord.classList.remove("cursor");
+    cursorWord.classList.add("done");
+    cursorWord = characters[++cursorIndex];
+  }
+}
+
+//calculates the stats of the game
+function statsGame(){
+  wpm = (characters.length/timer)*60.0 / 5.0; //more accurate calculation of wpm
+  document.querySelector('#wpmdisplay').innerHTML = wpm;
+  document.removeEventListener("keydown",keydown);
+  startGameButton.className.remove('hide');
+  return;
 }
