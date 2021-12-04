@@ -63,3 +63,12 @@
 				margin-right: auto;
 				width: fit-content;
 			}
+
+			.cursor{
+   			 background-color: rgb(72, 218, 218);
+			}
+
+			.done{
+			    color: rgb(156, 153, 153);
+			}
+
