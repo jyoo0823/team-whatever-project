@@ -17,6 +17,7 @@ const sentences = [
   'we are cool',
   ];
 
+
 // initialize game
  function initialize()
 {
@@ -25,13 +26,13 @@ const sentences = [
   setInterval(checkStatus, 1000);
 }
 
-
 // choose random words from array
 function showWord(words)
 {
   const randNum = Math.floor(Math.random() * words.length);
   currentWord.innerHTML = words[randNum];
 }
+
 
 // check if the word inputted is equal to the current word
 function checkMatch()
