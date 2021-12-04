@@ -15,7 +15,7 @@ const scoreDisplay = document.querySelector('#scoredisplay');
 const timeDisplay = document.querySelector('#timedisplay'); //<--we need to make an HTML source for this
 const startGameButton = document.querySelector('#button') //<--we're gonna need to make a HTML source for this
 const message = document.querySelector('#message');
-const seconds = document.querySelector('seconds');
+const seconds = document.querySelector('#seconds');
 
 // array of words to use
 const words = [ //CHANGE ALL words TO SENTENCES LATER WHEN WE EDIT 
