@@ -6,6 +6,10 @@ let timer = 0; //timer that runs during the game
 let countdown = 5; //initial countdown timer
 let score = 0;
 let isPlaying;
+//constants for the cursor 
+let const cursorIndex = 0; 
+let  const cursorCharacter = character[cursorIndex];
+cursorCharacter.classList.add("cursor"); 
 
 // these are DOM element is something like a DIV, HTML, BODY element on a page
 // const wordInput = document.querySelector('FILL IN THE BLANK');
@@ -62,6 +66,18 @@ function checkMatch()
   else
     return false;
   scoreDisplay.innerHTML = score;
+}
+
+//changes the color of the character when it is typed
+function cursor()
+{
+  if (wordInput.value === currentWord.innerHTML)
+  {
+    cursorCharacter.classList.remove("cursor");
+    cursorCharacter.classList.add("done");
+    cursorCharacter = characters[++cursorIndex];
+    cursorCharacter.classList.add("cursor"); 
+  } 
 }
 
 //countdown at the beginning of the game
