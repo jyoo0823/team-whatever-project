@@ -2,16 +2,18 @@ window.addEventListener('load', initialize);
 
 // global variables we're using in functions
 // let is a keyword that says variable is prone to change (i.e. opposite of const)
+let timer = 0;
 let score = 0;
 let isPlaying;
 
 // these are DOM element is something like a DIV, HTML, BODY element on a page
 // const wordInput = document.querySelector('FILL IN THE BLANK');
-// const currentWord = document.querySelector('FILL IN THE BLANK')
+// const currentWord = document.querySelector('FILL IN THE BLANK');
 // const scoreDisplay = document.querySelector('FILL IN THE BLANK');
+// const scoreTimer = document.querySelector('FILL IN THE BLANK');
+// const startGameButton = document.querySelector('button') //<--we're gonna need to make a HTML source for this
 // const message = document.querySelector('FILL IN THE BLANK');
 // const seconds = document.querySelector('FILL IN THE BLANK');
-
 
 // array of words to use
 const sentences = [
@@ -25,7 +27,21 @@ const sentences = [
 {
   showWord(words);
   wordInput.addEventListener('input', checkMatch);
+  startGameButton.addEventListener('click',function(event)){
+    event.preventDefault();
+    startGameButton.className = 'hide'; //hides the game button that player clicks on to start game
+    input.className = " ";
+    input.focus(); //after player clicks on button, cursor is focused on input box
+    gameTimer(); //starts timer at click of button
+  }
   setInterval(checkStatus, 1000);
+}
+
+function gameTimer()
+{
+  setInterval(function(){
+    timer+=1;
+  },1000);//increments one second in timer every 1000ms which is one second
 }
 
 // choose random words from array
@@ -59,4 +75,3 @@ function checkStatus()
   if((!isPlaying) && (score === 5;))
     message.innerHTML = 'Game Over :(';
 }
-
