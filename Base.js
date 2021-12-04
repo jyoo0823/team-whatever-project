@@ -27,7 +27,8 @@ const sentences = [
 {
   showWord(words);
   wordInput.addEventListener('input', checkMatch);
-  startGameButton.addEventListener('click',function(event)){
+  startGameButton.addEventListener('click',function(event))
+  {
     event.preventDefault();
     startGameButton.className = 'hide'; //hides the game button that player clicks on to start game
     input.className = " ";
@@ -37,12 +38,6 @@ const sentences = [
   setInterval(checkStatus, 1000);
 }
 
-function gameTimer()
-{
-  setInterval(function(){
-    timer+=1;
-  },1000);//increments one second in timer every 1000ms which is one second
-}
 
 // choose random words from array
 function showWord(words)
@@ -66,6 +61,14 @@ function checkMatch()
   else
     return false;
   scoreDisplay.innerHTML = score;
+}
+
+function gameTimer()
+{
+  setInterval(function()
+  {
+    timer+=1;
+  },1000);//increments one second in timer every 1000ms which is one second
 }
 
 
