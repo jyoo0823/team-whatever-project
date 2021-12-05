@@ -11,7 +11,7 @@ const sentences = [
 ];
 
 RandomQuote();
-console.log(curr_quote.length);
+console.log(curr_quote);
 const characters = curr_quote.split("").map((charvals) => {
     const spanofcharacter = document.createElement('span');
     spanofcharacter.innerText = charvals;
@@ -30,11 +30,17 @@ document.addEventListener("input", () => {
     arrayQuote.forEach((characterSpan, index) => {
         const character = arrayValue[index]
         if (character === characterSpan.innerText) {
-            //correctchar = characters[++cursorindex];
+            characterSpan.classList.remove("bad");
+            characterSpan.classList.add("good");
             current = true;
             console.log(current);
+        } else if (character == null){
+            characterSpan.classList.remove("bad");
+            characterSpan.classList.remove("good");
+            current = false;
         } else {
-            //correctchar = characters[++cursorindex];
+            characterSpan.classList.add("bad");
+            characterSpan.classList.remove("good");
             current = false;
             console.log(current);
         }
