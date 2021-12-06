@@ -6,6 +6,7 @@ const timerDisplay = document.querySelector("#timer");
 const resetGameButton = document.querySelector('#reset');
 const wpmScoreDisplay = document.querySelector('#wpmScore');
 const timeScoreDisplay = document.querySelector('#timeScore');
+const playAudio = document.querySelector('#audio');
 
 var curr_input = "";
 var curr_quote = "";
@@ -60,10 +61,12 @@ function startGame(){
             renderNewQuote();
             score++;
             console.log(score);
+	    playAudio.play();
         }
         if (score == 5){
             gameOverPopup();
             quoteDisplayElement.classList.add("hidden");
+		
         }
     });
 }
@@ -120,8 +123,8 @@ function resetGame(){
 
 function gameOverPopup ()
 {
-	document.querySelector(".popup").style.display = "block"; 
-    wpm = wordTracker/timertime *(60.0);
+    document.querySelector(".popup").style.display = "block"; 
+    wpm = (wordTracker/5.0)/(timertime/60.0);
     wpmScoreDisplay.innerHTML = "Your WPM: " + wpm.toFixed(2);
     timeScoreDisplay.innerHTML = "You took " + timertime + " seconds to complete the game!";
     resetGameButton.classList.remove("hidden");
