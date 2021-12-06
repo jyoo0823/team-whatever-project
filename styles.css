@@ -1,64 +1,136 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+header {
+    position: absolute;
+    top: 0rem;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(43, 72, 201);
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #1E0555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: rgba( 43, 202, 201, 0.3);
 }
 
-body, .quote-input {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+body,
+.quote-input {
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.container {
-  background-color: #F0DB4F;
-  padding: 1rem;
-  border-radius: .5rem;
-  width: 700px;
-  max-width: 90%;
+.movable {
+    position: absolute;
+    top: 5rem;
+}
+
+.container1 {
+    background-color: rgb(43, 72, 201);
+    position: absolute;
+    top: 21rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin: 1rem;
+    width: 600px;
+    max-width: 90%;
+    height: auto;
+    font-size: large;
+}
+
+.container2 {
+    background-color: rgb(41, 118, 241);
+    border-radius: .5rem;
+    position: absolute;
+    top: 29rem;
+    margin: 1rem;
+    width: 600px;
+    max-width: 90%;
+    height: 10rem;
+    font-size: large;
+}
+
+.container3 {
+    position: absolute;
+    top: 12rem;
+    height: 9rem;
+    width: 600px;
+    max-width: 90%;
+    border-radius: 0.25rem;
+    border-color: cadetblue;
+    background-color: rgb(98, 170, 110);
+}
+
+.howto {
+    padding: 5px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(182, 255, 255);
+    font-size: 1.5rem;
+    color: rgb(92, 255, 192);
+    font-weight: 900;
+}
+
+.explain {
+    padding: 6px;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    font-weight: 900;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.score {
+    position: absolute;
+    top: 3.5rem;
+    font-size: 1.5rem;
+    color: rgb(43, 72, 201);
+    font-weight: bold;
 }
 
 .timer {
-  position: absolute;
-  top: 2rem;
-  font-size: 3rem;
-  color: #F0DB4F;
-  font-weight: bold;
+    position: absolute;
+    top: 5rem;
+    font-size: 1.5rem;
+    color: rgb(43, 72, 201);
+    font-weight: bold;
 }
 
 .quote-display {
-  margin-bottom: 1rem;
-  margin-left: calc(1rem + 2px);
-  margin-right: calc(1rem + 2px);
+    color: white;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .quote-input {
-  background-color: transparent;
-  border: 2px solid #A1922E;
-  outline: none;
-  width: 100%;
-  height: 8rem;
-  margin: auto;
-  resize: none;
-  padding: .5rem 1rem;
-  font-size: 1rem;
-  border-radius: .5rem;
+    background-color: transparent;
+    color: white;
+    border: 10px solid rgb(41, 118, 241);
+    outline: none;
+    width: 100%;
+    height: 10rem;
+    margin: auto;
+    resize: none;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
 }
 
 .quote-input:focus {
-  border-color: black;
+    border-color: rgba(43, 220, 156, 0.9);
 }
 
 .good {
-  color: green;
+    color: rgb(0, 255, 13);
 }
 
 .bad {
-  color: red;
-  text-decoration: underline;
+    color: red;
+    text-decoration: underline;
 }
