@@ -4,8 +4,7 @@ const startGameBtn = document.getElementById("start-game");
 let inputbox = document.getElementById("inputbox");
 inputbox.classList.add("hidden");
 
-let countdowntime = 6;
-let timertime = -6;
+
 
 const countdownDisplay = document.querySelector('#countdown');
 let timerDisplay = document.getElementById("countup");
@@ -14,9 +13,12 @@ let timerwordDisplay = document.getElementById("countupword");
 timerwordDisplay.classList.add("hidden");
 
 
+
+
 function startGame(){
   startGameBtn.classList.add("hidden");
-
+  window.countdowntime = 6;
+  window.timertime = -6;
    setInterval(countdown, 1000);
    setInterval(timer, 1000);
 
@@ -51,4 +53,10 @@ if (timertime >=0){
     timertime++;
     timerDisplay.innerHTML = timertime;
   
+}
+
+function reset(){
+    if(score==5){
+    startGameBtn.classList.remove("hidden");
+    }
 }
