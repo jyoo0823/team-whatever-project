@@ -21,6 +21,12 @@ var countdownVar = "";
 var wpm = "";
 var wordTracker = 0;
 
+const levels = {
+    easy: 5,
+    medium: 10,
+    hard: 15
+};
+
 quoteInputElement.classList.add("hidden");//hides input box before game starts
 timerDisplay.classList.add("hidden");
 
@@ -97,7 +103,7 @@ function startGame(){
             console.log(score);
 	    playAudio.play();
         }
-        if (score == 5){
+        if (score == scoreMax){
             gameOverPopup();
             quoteDisplayElement.classList.add("hidden");
 		
@@ -128,7 +134,7 @@ function timer(){
     }
     timertime++;
     timerDisplay.innerHTML = "Time Passed: " + timertime;
-    if (score==5){
+    if (score==scoreMax){
         clearInterval(timerVar);
     }
 }
