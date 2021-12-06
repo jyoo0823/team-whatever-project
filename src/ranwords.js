@@ -1,6 +1,9 @@
 const quoteDisplayElement = document.querySelector('#quoteDisplay');
 const quoteInputElement = document.querySelector('#quoteInput');
 const startGameButton = document.querySelector('#button');
+const startEasyMode = document.querySelector('#buttonEasy');
+const startMediumMode = document.querySelector('#buttonMedium');
+const startHardMode = document.querySelector('#buttonHard');
 const countdownDisplay = document.querySelector('#countdown');
 const timerDisplay = document.querySelector("#timer");
 const resetGameButton = document.querySelector('#reset');
@@ -27,6 +30,37 @@ const sentences = [
     "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
     "It does not do to dwell on dreams and forget to live",
 ];
+
+function ChooseGameMode(){
+    startGameButton.classList.add("hidden");
+    startEasyMode.classList.remove("hidden");
+    startMediumMode.classList.remove("hidden");
+    startHardMode.classList.remove("hidden");
+}
+
+function ChooseGameEasy(){
+    startEasyMode.classList.add("hidden");
+    startMediumMode.classList.add("hidden");
+    startHardMode.classList.add("hidden");
+    scoreMax = levels.easy;
+    startGame();
+}
+
+function ChooseGameMedium(){
+    startEasyMode.classList.add("hidden");
+    startMediumMode.classList.add("hidden");
+    startHardMode.classList.add("hidden");
+    scoreMax = levels.medium;
+    startGame();
+}
+
+function ChooseGameHard(){
+    startEasyMode.classList.add("hidden");
+    startMediumMode.classList.add("hidden");
+    startHardMode.classList.add("hidden");
+    scoreMax = levels.hard;
+    startGame();
+}
 
 function startGame(){
     initializeGame();
