@@ -4,14 +4,18 @@ const startGameButton = document.querySelector('#button');
 const countdownDisplay = document.querySelector('#countdown');
 const timerDisplay = document.querySelector("#timer");
 const resetGameButton = document.querySelector('#reset');
+const wpmScoreDisplay = document.querySelector('#wpmScore');
+const timeScoreDisplay = document.querySelector('#timeScore');
 
 var curr_input = "";
 var curr_quote = "";
 let countdowntime = 6;
 let timertime = -6;
 var score = 0;
-const timerVar = "";
-const countdownVar = "";
+var timerVar = "";
+var countdownVar = "";
+var wpm = "";
+var wordTracker = 0;
 
 quoteInputElement.classList.add("hidden");//hides input box before game starts
 timerDisplay.classList.add("hidden");
@@ -32,6 +36,7 @@ function startGame(){
     document.addEventListener("input", () => {
         const arrayQuote = quoteDisplayElement.querySelectorAll('span');
         const arrayValue = quoteInputElement.value.split('');//splits the input by element
+
 
         arrayQuote.forEach((characterSpan, index) => { //creates a span around each element of the quoteDisplay
             const character = arrayValue[index] //character = element from the input
@@ -57,51 +62,50 @@ function startGame(){
             console.log(score);
         }
         if (score == 5){
-            resetGameButton.classList.remove("hidden");
-            quoteInputElement.classList.add("hidden");
+            gameOverPopup();
+            quoteDisplayElement.classList.add("hidden");
         }
     });
 }
 
 function initializeGame(){
     startGameButton.classList.add("hidden");
-    setInterval(countdown, 1000);
-    setInterval(timer, 1000);
+    countdownVar = setInterval(countdown, 1000);
+    timerVar = setInterval(timer, 1000);
 }
 
 function countdown(){
   if (countdowntime > 0) { // Make sure time is not run out
     countdowntime--; // Decrement
     countdownDisplay.innerHTML = "Game Will Start In: " + countdowntime;
-    setTimeout(functionToDisappearInnerHTML, 5000);
   }else if (countdowntime === 0) {
-  countdownDisplay.classList.add("hidden");//adds countdown display
+    countdownDisplay.classList.add("hidden");//adds countdown display
+    quoteInputElement.classList.remove("hidden");
+    clearInterval(countdownVar);
   }
 }
 
 function timer(){
     if (timertime >=0){
-        quoteInputElement.classList.remove("hidden");
         timerDisplay.classList.remove("hidden");
     }
     timertime++;
     timerDisplay.innerHTML = "Time Passed: " + timertime;
-}
-
-function functionToDisappearInnerHTML() {
-    countdownDisplay.innerHTML = ""; 
+    if (score==5){
+        clearInterval(timerVar);
+    }
 }
 
 function RandomQuote(){
     const randNum = Math.floor(Math.random() * sentences.length); //random sentence generated from array
     quoteDisplayElement.innerHTML = sentences[randNum]; //sets and displays current sentence generated from the array
     curr_quote = quoteDisplayElement.innerHTML; //sets current quote to the random generated quote
+    wordTracker = wordTracker + quoteDisplayElement.innerHTML.split(" ").length;
 }
 
 function renderNewQuote(){
     RandomQuote();
     quoteDisplayElement.innerHTML = "";
-    console.log(quoteDisplayElement)
     curr_quote.split('').forEach(character => {
         const characterSpan = document.createElement('span')
         characterSpan.innerText = character
@@ -110,17 +114,16 @@ function renderNewQuote(){
     quoteInputElement.value = "";
 }
 
-// function resetGame(){
-//     clearInterval(countdown);
-//     clearInterval(timer);
-//     curr_input = "";
-//     curr_quote = "";
-//     countdowntime = 6;
-//     timertime = -6;
-//     score = 0;
-//     resetGameButton.classList.add("hidden");
-//     timerDisplay.classList.add("hidden");
-//     startGameButton.classList.remove("hidden");
-//     quoteDisplayElement.innerHTML = NULL;
-//     quoteInputElement.innerHTML = NULL;
-// }
+function resetGame(){
+    document.location.reload();
+}
+
+function gameOverPopup ()
+{
+	document.querySelector(".popup").style.display = "block"; 
+    wpm = wordTracker/timertime *(60.0);
+    wpmScoreDisplay.innerHTML = "Your WPM: " + wpm.toFixed(2);
+    timeScoreDisplay.innerHTML = "You took " + timertime + " seconds to complete the game!";
+    resetGameButton.classList.remove("hidden");
+    quoteInputElement.classList.add("hidden");
+}
