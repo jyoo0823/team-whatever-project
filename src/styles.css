@@ -32,7 +32,7 @@ body,
 .container1 {
     background-color: rgb(43, 72, 201);
     position: absolute;
-    top: 21rem;
+    top: 23rem;
     padding: 1rem;
     border-radius: .5rem;
     margin: 1rem;
@@ -46,7 +46,7 @@ body,
     background-color: rgb(41, 118, 241);
     border-radius: .5rem;
     position: absolute;
-    top: 31rem;
+    top: 33rem;
     margin: 1rem;
     width: 600px;
     max-width: 90%;
@@ -56,13 +56,13 @@ body,
 
 .container3 {
     position: absolute;
-    top: 12rem;
-    height: 9rem;
+    top: 15rem;
+    height: auto;
     width: 600px;
     max-width: 90%;
     border-radius: 0.25rem;
     border-color: cadetblue;
-    background-color: rgb(98, 170, 110);
+    background-color: rgb(76, 148, 88);
 }
 
 .howto {
@@ -70,42 +70,55 @@ body,
     text-align: center;
     text-decoration: underline;
     text-decoration-color: rgb(182, 255, 255);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: rgb(92, 255, 192);
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .explain {
     padding: 6px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: white;
     font-weight: 900;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.score {
+.score-display {
+    position: absolute;
+    top: 3.5rem;
+    font-size: 1.5rem;
+    margin-left: -12rem;
+    color: rgb(43, 72, 201);
+    font-weight: bold;
+}
+
+.timer-display {
     position: absolute;
     top: 3.5rem;
     font-size: 1.5rem;
     color: rgb(43, 72, 201);
     font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: -2rem;
+    width: 20rem;
 }
 
-.timer {
+.countdown-display {
     position: absolute;
-    top: 5rem;
-    font-size: 1.5rem;
+    margin-left: -10rem;
+    top: 3.5rem;
     color: rgb(43, 72, 201);
     font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: -10rem;
 }
 
 .quote-display {
     color: white;
-    margin-bottom: 1rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .quote-input {
@@ -133,4 +146,103 @@ body,
 .bad {
     color: red;
     text-decoration: underline;
+}
+
+.popup {
+    background-color: rgb(77, 56, 19);
+    width: 450px;
+    height: auto;
+    padding: 20px 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    display: none;
+    text-align: center;
+    color: rgb(76, 148, 88);
+    text-shadow: -0.4px -0.4px 0 rgb(12, 48, 10), 0.4px -0.4px 0 rgb(12, 48, 10), -0.4px 0.4px 0 rgb(12, 48, 10), 0.4px 0.4px rgb(12, 48, 10);
+}
+
+.wpm-score {
+    text-shadow: -0.4px -0.4px 0 rgb(12, 48, 10), 0.4px -0.4px 0 rgb(12, 48, 10), -0.4px 0.4px 0 rgb(12, 48, 10), 0.4px 0.4px rgb(12, 48, 10);
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(76, 148, 88);
+}
+
+.timescore-display {
+    text-shadow: -0.4px -0.4px 0 rgb(12, 48, 10), 0.4px -0.4px 0 rgb(12, 48, 10), -0.4px 0.4px 0 rgb(12, 48, 10), 0.4px 0.4px rgb(12, 48, 10);
+    text-align: center;
+    color: rgb(76, 148, 88);
+}
+
+.resetbutton {
+    display: block;
+    margin: auto;
+    background-color: rgb(76, 148, 88);
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    color: rgb(77, 56, 19);
+    text-shadow: -0.4px -0.4px 0 rgb(58, 42, 11), 0.4px -0.4px 0 rgb(58, 42, 11), -0.4px 0.4px 0 rgb(58, 42, 11), 0.4px 0.4px rgb(58, 42, 11);
+}
+
+.buttonclass {
+    width: 25rem;
+    height: 1.6rem;
+    position: absolute;
+    top: 13rem;
+    border-radius: 4rem;
+    cursor: pointer;
+    background-color: rgb(58, 42, 11);
+    color: white;
+}
+
+.buttoneasyclass {
+    width: 7rem;
+    height: 1.6rem;
+    position: absolute;
+    top: 13rem;
+    margin-right: 20rem;
+    border-radius: 4rem;
+    border-color: green;
+    cursor: pointer;
+    background-image: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(148, 190, 117, 1) 100%);
+    color: white;
+    background-size: cover;
+}
+
+.buttonmediumclass {
+    width: 7rem;
+    height: 1.6rem;
+    position: absolute;
+    top: 13rem;
+    border-radius: 4rem;
+    border-color: green;
+    cursor: pointer;
+    background-image: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(148, 190, 117, 1) 100%);
+    color: white;
+    background-size: cover;
+}
+
+.buttonhardclass {
+    width: 7rem;
+    height: 1.6rem;
+    position: absolute;
+    top: 13rem;
+    margin-left: 20rem;
+    border-radius: 4rem;
+    border-color: green;
+    cursor: pointer;
+    background-image: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(148, 190, 117, 1) 100%);
+    color: white;
+    background-size: cover;
+}
+
+.hidden {
+    display: none;
 }
