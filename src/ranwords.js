@@ -12,7 +12,7 @@ const timeScoreDisplay = document.querySelector('#timeScore');
 const playAudio = document.querySelector('#audio');
 const scoreScoreDisplay = document.querySelector('#score')
 
-var playBGAudio = document.getElementById("bgaudio");
+var playBGAudio = document.querySelector('#bgaudio');
 playBGAudio.volume = 0.03;
 
 var curr_input = "";
@@ -59,6 +59,7 @@ const sentences = [
 ];
 
 function ChooseGameMode() {
+    playBGAudio.play();
     startGameButton.classList.add("hidden");
     startEasyMode.classList.remove("hidden");
     startMediumMode.classList.remove("hidden");
