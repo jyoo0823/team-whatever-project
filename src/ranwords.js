@@ -44,10 +44,10 @@ const sentences = [
     "Toads are frogs that have warty and dry skin, as well as shorter hind legs.",
     "Frogs can jump more than 20 times their body length using their legs.",
     "The golden poison frog has bold colors as a defense mechanism to warn other predators of their poisonous skin.",
-    "Through evolution, frogs like the Fort Randolph robber frog have evolved to have boldly colored skin due to their coexistance with poisonous frog species.",
+    "Through evolution, frogs like the Fort Randolph robber frog have evolved to have boldly colored skin due to their coexistence with poisonous frog species.",
     "Frogs dig burrows in the mud at the bottom of ponds or underground to hibernate.",
     "The wood frog can survive for weeks with 65 percent of its body frozen.",
-    "The wood frog uses glucose in its blood to keep its vital organs warm and protect tehm from damage while its body freezes.",
+    "The wood frog uses glucose in its blood to keep its vital organs warm and protect them from damage while its body freezes.",
     "Most frogs are freshwater frogs; however, there are some frogs that can live in almost completely salt water.",
     "Frogs have spectacular night vision and are sensitive to movements.",
     "Frogs were the first land animal to have vocal cords.",
@@ -55,7 +55,7 @@ const sentences = [
     "When swallowing food, frogs pull their eyes down to the roof of their mouths to push their food down their throat.",
     "One gram of poison made by the skin of the golden poison dart frog is enough to kill 100,000 people.",
     "Every week frogs completely shed their skin and then usually eat it.",
-    "A group of frogs is called an army unlike a group of birds whcih is called a flock.",
+    "A group of frogs is called an army unlike a group of birds which is called a flock.",
 ];
 
 function ChooseGameMode() {
