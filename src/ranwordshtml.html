@@ -13,20 +13,18 @@
 </header>
 
 <body>
-    <div class="score" id="score">Score: 0</div>
-    <!--<div class="timer" id="timer">Time: 0</div>-->
     <div class="movable" id="froggo">
-        <img src="freeFrog.png" width=100px height=100px>
+        <img src="https://cdn.pixabay.com/photo/2021/02/07/19/48/frog-5992495_1280.png" width=100px height=100px>
     </div>
-    <button id="button" onclick="ChooseGameMode()">Click to Start Game!</button>
-    <button id="buttonEasy" onclick="ChooseGameEasy()" class="hidden">Easy Mode</button>
-    <button id="buttonMedium" onclick="ChooseGameMedium()" class="hidden">Medium Mode</button>
-    <button id="buttonHard" onclick="ChooseGameHard()" class="hidden">Hard Mode</button>
+    <button class="buttonclass" id="button" onclick="ChooseGameMode()">Click to Start Game!</button>
+    <button class="buttoneasyclass hidden" id="buttonEasy" onclick="ChooseGameEasy()">Easy Mode</button>
+    <button class="buttonmediumclass hidden" id="buttonMedium" onclick="ChooseGameMedium()">Medium Mode</button>
+    <button class="buttonhardclass hidden" id="buttonHard" onclick="ChooseGameHard()">Hard Mode</button>
     <div class="container1">
         <div class="quote-display" id="quoteDisplay">Let's Start The Game!</div>
     </div>
     <div class="container2">
-        <textarea class="quote-input" id="quoteInput" placeholder="Type Here" autofocus></textarea>
+        <textarea class="quote-input" id="quoteInput" placeholder="George is waiting..." autofocus></textarea>
     </div>
     </div>
     <div class="container3">
@@ -39,18 +37,23 @@
     <div class="statscontainer">
         <div class="countdown-display" id="countdown"></div>
         <div class="timer-display" id="timer"></div>
+        <div class="score-display" id="score"></div>
     </div>
-        <div class="popup">
-        <h2>Congrats, you finished the race!</h2>
+    <div class="popup">
+        <h2>Congrats, you helped George finished the race!</h2>
         <p class="wpm-score" id="wpmScore"></p>
-	    <p class="timescore-display" id="timeScore"></p>
-        <button id="reset" onclick="resetGame()" class="hidden">Click Here to Play Again</button>
-        <!--<playAgainPopup href="#">Play Again?</playAgainPopup>-->
+        <p class="timescore-display" id="timeScore"></p>
+        <button class="resetbutton hidden" id="reset" onclick="resetGame()">Play Again?</button>
     </div>
     </div>
-    <audio id ="audio">
-        <source src="SentenceComplete.mp3.mp3" type="audio/mpeg"/>
-    </audio>	
+    <audio id="audio">
+        <source src="SentenceComplete.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bgaudio" autoplay loop>
+        <source src="BGMusic.mp3" type="audio/mpeg" autoplay loop>
+    </audio>
 </body>
 <script type="text/javascript" src="ranwords.js">
 </script>
+
+</html>
