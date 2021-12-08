@@ -130,7 +130,7 @@ function startGame() { //function that runs the entire game
         const arraySentence = sentenceDisplayElement.querySelectorAll('span'); //creates a span around each element of the sentence generated
         const arrayValue = sentenceInputElement.value.split(''); //splits each input by the element and saves it as an array
 
-        arraySentence.forEach((characterSpan, index) => 
+        arraySentence.forEach((characterSpan, index) => {
         //iterates through each span which corresponds to an index number and compares to the index it correlates to in arrayValue
             const character = arrayValue[index]
             if (character == null) { //player inputs nothing
