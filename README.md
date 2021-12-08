@@ -7,6 +7,9 @@ In this project, we will be creating a unique, easily comprehensive speed typing
 # How to "build" Run George Run
 The typing game, "Run George Run", was made by using 3 different languages, Javascript, HTML, and CSS. First, the Javascript was used to make complex functions such as detecting whether the input is correct and changing colors accordingly, making the countdown and game timer to work, making the game over pop up page to appear, etc. For these functions to work, codes such as the if statement and setInterval() functions were used. Next, HTML was used to "outline" the entire website and is the file that we use to compile the CSS and Javascript files. Different elements of the website is coded in the HTML file that will show up on the web page. Also these elements were used inside the functions made in the Javascript file as well. Lastly, CSS was used to style the elements created in the HTML file. The code in the CSS file determine how those elements would look on the web page, including its color, margins, border, padding, etc. 
 
+#Youtube Video Link
+
+
 # Test Cases
 To test if the game fully works, our test cases include:
 1.	Press the start button. Check that the mode buttons show up.
