@@ -1,3 +1,4 @@
+//calling the elements of the HTML that correspond to those selectors
 const sentenceDisplayElement = document.querySelector('#sentenceDisplay');
 const sentenceInputElement = document.querySelector('#sentenceInput');
 
@@ -19,7 +20,7 @@ const rock = document.querySelector("#rock");
 
 const playAudio = document.querySelector('#audio');
 var playBGAudio = document.querySelector('#bgaudio');
-playBGAudio.volume = 0.03;
+playBGAudio.volume = 0.03;//controlling volume output
 
 var curr_input = "";
 var curr_sentence = "";
@@ -31,6 +32,7 @@ var countdownVar = "";
 var wpm = "";
 var wordTracker = 0;
 
+//initialization of the difficulty levels
 const levels = {
     easy: 5,
     medium: 10,
@@ -38,10 +40,11 @@ const levels = {
 };
 
 sentenceInputElement.classList.add("hidden"); //hides input box before game starts
-timerDisplay.classList.add("hidden");
+timerDisplay.classList.add("hidden"); 
 scoreScoreDisplay.classList.add("hidden");
 scoreScoreDisplay.innerHTML = "Score: 0";
 
+//array of frog facts
 const sentences = [
   "Frogs have been proven to have roamed the Earth for more than 200 million years.",
   "The goliath frog of West Africa is the largest frog in the world.",
@@ -85,7 +88,7 @@ const sentences = [
   "The Isthmohyla rivularis tree frog is one of the rarest animals in the world and was most recently seen in 2007.",
 ];
 
-function ChooseGameMode() {
+function ChooseGameMode() { //displays the three buttons to choose difficult modes
     playBGAudio.play();
     startGameButton.classList.add("hidden");
     startEasyMode.classList.remove("hidden");
@@ -117,52 +120,54 @@ function ChooseGameHard() {
     startGame();
 }
 
-function startGame() {
-    document.querySelector("#container3").classList.add("hidden");
+function startGame() { //function that runs the entire game
+    document.querySelector("#container3").classList.add("hidden"); //gets rid of instruction box
     initializeGame();
     renderNewSentence(); //first sentence generated
 
     var current = true;
     document.addEventListener("input", () => {
-        const arraySentence = sentenceDisplayElement.querySelectorAll('span');
-        const arrayValue = sentenceInputElement.value.split('');
+        const arraySentence = sentenceDisplayElement.querySelectorAll('span'); //creates a span around each element of the sentence generated
+        const arrayValue = sentenceInputElement.value.split(''); //splits each input by the element and saves it as an array
 
-        arraySentence.forEach((characterSpan, index) => {
+        arraySentence.forEach((characterSpan, index) => 
+        //iterates through each span which corresponds to an index number and compares to the index it correlates to in arrayValue
             const character = arrayValue[index]
-            if (character == null) {
+            if (character == null) { //player inputs nothing
                 characterSpan.classList.remove('good')
                 characterSpan.classList.remove('bad')
                 current = false;
-            } else if (character === characterSpan.innerText) {
+            } else if (character === characterSpan.innerText) { //player input characters correctly 
                 characterSpan.classList.add('good')
                 characterSpan.classList.remove('bad')
                 current = true;
-            } else {
+            } else { //player input incorrect character
                 characterSpan.classList.remove('good')
                 characterSpan.classList.add('bad')
                 current = false;
             }
         })
-        if (current === true && sentenceInputElement.value == curr_sentence) {
-            score++;
-            jump();
-            scoreScoreDisplay.innerHTML = "Score: " + score;
+        if (current === true && sentenceInputElement.value == curr_sentence) { 
+        //when the last element was correctly inputted and player input equals sentence generated
+            score++; //increments score
+            jump(); //causes frog graphic to jump over rock
+            scoreScoreDisplay.innerHTML = "Score: " + score; //display score
             if (score < scoreMax) {
-                renderNewSentence();
+                renderNewSentence(); //generates new sentence
             }
             playAudio.play();
         }
-        if (score == scoreMax) {
-            gameOverPopup();
-            sentenceDisplayElement.classList.add("hidden");
+        if (score == scoreMax) { 
+            gameOverPopup(); //displays stats with the play again button
+            sentenceDisplayElement.classList.add("hidden"); //hides sentence display
         }
     });
 }
 
 function initializeGame() {
     startGameButton.classList.add("hidden");
-    countdownVar = setInterval(countdown, 1000);
-    timerVar = setInterval(timer, 1000);
+    countdownVar = setInterval(countdown, 1000); //starts countdown and calls countdown function every 1000ms=1s
+    timerVar = setInterval(timer, 1000); //starts timer and calls timer function every 1000ms=1s
 }
 
 function countdown() {
@@ -173,7 +178,7 @@ function countdown() {
         countdownDisplay.classList.add("hidden"); //adds countdown display
         sentenceInputElement.classList.remove("hidden");
         scoreScoreDisplay.classList.remove("hidden");
-        clearInterval(countdownVar);
+        clearInterval(countdownVar);//stops countdown function
     }
 }
 
@@ -184,41 +189,40 @@ function timer() {
     timertime++;
     timerDisplay.innerHTML = "Time Passed: " + timertime;
     if (score == scoreMax) {
-        clearInterval(timerVar);
+        clearInterval(timerVar);//stops timer function at end of game
     }
 }
 
 function RandomSentence() {
-    const randNum = Math.floor(Math.random() * sentences.length);
+    const randNum = Math.floor(Math.random() * sentences.length); //generates a random number based on length of our sentences array
     sentenceDisplayElement.innerHTML = sentences[randNum]; //sets and displays current sentence generated from the array
     curr_sentence = sentenceDisplayElement.innerHTML;
-    wordTracker = wordTracker + sentenceDisplayElement.innerHTML.split("").length;
-    console.log(wordTracker);
+    wordTracker = wordTracker + sentenceDisplayElement.innerHTML.split("").length; //counts the number of elements in the sentence generated
 }
 
 function renderNewSentence() {
-    RandomSentence();
+    RandomSentence(); //random sentence generator
     sentenceDisplayElement.innerHTML = "";
-    curr_sentence.split('').forEach(character => {
-        const characterSpan = document.createElement('span')
-        characterSpan.innerText = character
-        sentenceDisplayElement.appendChild(characterSpan)
+    curr_sentence.split('').forEach(character => { //splits the sentence generated into each element and creates a span around each element
+        const characterSpan = document.createElement('span');
+        characterSpan.innerText = character;
+        sentenceDisplayElement.appendChild(characterSpan);
     })
     sentenceInputElement.value = "";
 }
 
 // reloads page to reset it
 function resetGame() {
-    document.location.reload();
+    document.location.reload(); //reloads the browser window
 }
 
 // display a popup when game is over
 function gameOverPopup() {
     document.querySelector(".popup").style.display = "block";
-    wpm = (wordTracker / 5.0) / (timertime / 60.0);
+    wpm = (wordTracker / 5.0) / (timertime / 60.0); //calculates words per minute
     wpmScoreDisplay.innerHTML = "Your WPM: " + wpm.toFixed(2);
     timeScoreDisplay.innerHTML = "You took " + timertime + " seconds to complete the game!";
-    resetGameButton.classList.remove("hidden");
+    resetGameButton.classList.remove("hidden"); //displays reset button to reload page
     sentenceInputElement.classList.add("hidden");
 }
 
