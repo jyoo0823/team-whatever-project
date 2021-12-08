@@ -13,24 +13,22 @@
 </header>
 
 <body>
-    <div class="movable" id="froggo">
-        <img src="freeFrog.png" width=100px height=100px>
-    </div>
+
     <button class="buttonclass" id="button" onclick="ChooseGameMode()">Click to Start Game!</button>
     <button class="buttoneasyclass hidden" id="buttonEasy" onclick="ChooseGameEasy()">Easy Mode</button>
     <button class="buttonmediumclass hidden" id="buttonMedium" onclick="ChooseGameMedium()">Medium Mode</button>
     <button class="buttonhardclass hidden" id="buttonHard" onclick="ChooseGameHard()">Hard Mode</button>
     <div class="container1">
-        <div class="quote-display" id="quoteDisplay">Let's Start The Game!</div>
+        <div class="sentence-display" id="sentenceDisplay">Let's Start The Game!</div>
     </div>
     <div class="container2">
-        <textarea class="quote-input" id="quoteInput" onpaste="return false" placeholder="George is waiting..." autofocus></textarea>
+        <textarea class="sentence-input" id="sentenceInput" onpaste="return false" placeholder="George is waiting..." autofocus></textarea>
     </div>
     </div>
-    <div class="container3">
+    <div class="container3" id="container3">
         <div class="howto">Help George Get To The Finish Line</div>
         <div class="explain">
-            Type 5 of the randomly generated sentences. Each sentence typed correctly make George jump once. You can not move on to the next sentence if there is any typing mistakes! Use backspace to fix them. After, George gets to the finish line, you will get your
+            Type the randomly generated sentences. Each sentence typed correctly makes George jump once. You can not move on to the next sentence if there is any typing mistakes! Use backspace to fix them. After, George gets to the finish line, you will get your
             words per minute.
         </div>
     </div>
@@ -38,6 +36,7 @@
         <div class="countdown-display" id="countdown"></div>
         <div class="timer-display" id="timer"></div>
         <div class="score-display" id="score"></div>
+
     </div>
     <div class="popup">
         <h2>Congrats, you helped George finished the race!</h2>
@@ -52,6 +51,10 @@
     <audio id="bgaudio" autoplay loop>
         <source src="BGMusic.mp3" type="audio/mpeg" autoplay loop>
     </audio>
+    <div class="game">
+        <div id="frog"> <img src = "freeFrog.png" width=100px height=100px></div>
+        <div id="rock"> <img src = "rock.jpg" width=90px height=40px></div>
+    </div>
 </body>
 <script type="text/javascript" src="ranwords.js">
 </script>
