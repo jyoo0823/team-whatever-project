@@ -3,28 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    
+    <!-- should size everything to window -->
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">    
+    
+    <!-- link to css file -->
     <link rel="stylesheet" href="style.css">
+    
     <title> Run George Run </title>
+    
 </head>
 
+    
 <header>
+    <!-- title text -->
     <center>Run George Run</center>
 </header>
 
+    
 <body>
-
+    
+    <!-- buttons to start and choose game mode -->
     <button class="buttonclass" id="button" onclick="ChooseGameMode()">Click to Start Game!</button>
     <button class="buttoneasyclass hidden" id="buttonEasy" onclick="ChooseGameEasy()">Easy Mode</button>
     <button class="buttonmediumclass hidden" id="buttonMedium" onclick="ChooseGameMedium()">Medium Mode</button>
     <button class="buttonhardclass hidden" id="buttonHard" onclick="ChooseGameHard()">Hard Mode</button>
+    
+    
+    <!-- divs for boxes -->
     <div class="container1">
         <div class="sentence-display" id="sentenceDisplay">Let's Start The Game!</div>
     </div>
+    
     <div class="container2">
         <textarea class="sentence-input" id="sentenceInput" onpaste="return false" placeholder="George is waiting..." autofocus></textarea>
     </div>
-    </div>
+    
     <div class="container3" id="container3">
         <div class="howto">Help George Go Back Home</div>
         <div class="explain">
@@ -32,30 +46,44 @@
             if you type something wrong. Once George successfully goes back home, you will also receive your WPM. Happy typing!
         </div>
     </div>
+    
+    
+    <!-- div for stats that show when playing game -->
     <div class="statscontainer">
         <div class="countdown-display" id="countdown"></div>
         <div class="timer-display" id="timer"></div>
         <div class="score-display" id="score"></div>
-
     </div>
+    
+    
+    <!-- div for game over popup -->
     <div class="popup">
         <h2>Congrats, you helped George get back home!</h2>
         <p class="wpm-score" id="wpmScore"></p>
         <p class="timescore-display" id="timeScore"></p>
         <button class="resetbutton hidden" id="reset" onclick="resetGame()">Play Again?</button>
     </div>
-    </div>
+    
+
+    <!-- audio for background and when you type the sentence correctly -->
     <audio id="audio">
         <source src="SentenceComplete.mp3" type="audio/mpeg">
     </audio>
+    
     <audio id="bgaudio" autoplay loop>
         <source src="BGMusic.mp3" type="audio/mpeg" autoplay loop>
     </audio>
+    
+    
+    <!-- frog moving graphics -->
     <div class="game">
         <div id="frog"> <img src = "freeFrog.png" width=100px height=100px></div>
         <div id="rock"> <img src = "rock.jpg" width=90px height=40px></div>
     </div>
+    
 </body>
+
+<!-- link to javascript file -->
 <script type="text/javascript" src="base.js">
 </script>
 
