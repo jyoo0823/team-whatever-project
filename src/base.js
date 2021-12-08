@@ -96,7 +96,7 @@ function ChooseGameMode() { //displays the three buttons to choose difficult mod
     startHardMode.classList.remove("hidden");
 }
 
-function ChooseGameEasy() {
+function ChooseGameEasy() { //easy game mode where sentences continue till player reaches score=5
     startEasyMode.classList.add("hidden");
     startMediumMode.classList.add("hidden");
     startHardMode.classList.add("hidden");
@@ -104,7 +104,7 @@ function ChooseGameEasy() {
     startGame();
 }
 
-function ChooseGameMedium() {
+function ChooseGameMedium() { //medium game mode where sentences continue till player reaches score=5
     startEasyMode.classList.add("hidden");
     startMediumMode.classList.add("hidden");
     startHardMode.classList.add("hidden");
@@ -112,7 +112,7 @@ function ChooseGameMedium() {
     startGame();
 }
 
-function ChooseGameHard() {
+function ChooseGameHard() { //hard game mode where sentences continue till player reaches score=5
     startEasyMode.classList.add("hidden");
     startMediumMode.classList.add("hidden");
     startHardMode.classList.add("hidden");
