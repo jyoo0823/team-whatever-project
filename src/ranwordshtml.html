@@ -14,17 +14,17 @@
 
 <body>
     <div class="movable" id="froggo">
-        <img src="freeFrog.png" width=100px height=100px>
+        <img src="freeFrog.png" width=80px height=80px>
     </div>
     <button class="buttonclass" id="button" onclick="ChooseGameMode()">Click to Start Game!</button>
     <button class="buttoneasyclass hidden" id="buttonEasy" onclick="ChooseGameEasy()">Easy Mode</button>
     <button class="buttonmediumclass hidden" id="buttonMedium" onclick="ChooseGameMedium()">Medium Mode</button>
     <button class="buttonhardclass hidden" id="buttonHard" onclick="ChooseGameHard()">Hard Mode</button>
     <div class="container1">
-        <div class="quote-display" id="quoteDisplay">Let's Start The Game!</div>
+        <div class="sentence-display" id="sentenceDisplay">Let's Start The Game!</div>
     </div>
     <div class="container2">
-        <textarea class="quote-input" id="quoteInput" onpaste="return false" placeholder="George is waiting..." autofocus></textarea>
+        <textarea class="sentence-input" id="sentenceInput" onpaste="return false" placeholder="George is waiting..." autofocus></textarea>
     </div>
     </div>
     <div class="container3">
@@ -52,6 +52,10 @@
     <audio id="bgaudio" autoplay loop>
         <source src="BGMusic.mp3" type="audio/mpeg" autoplay loop>
     </audio>
+    <div class="game">
+        <div id="frog"> <img src = "freeFrog.png" width=80px height=80px></div>
+        <div id="rock"> <img src = "rock.jpg" width=90px height=40px></div>
+    </div>
 </body>
 <script type="text/javascript" src="ranwords.js">
 </script>
