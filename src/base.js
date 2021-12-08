@@ -143,7 +143,7 @@ function startGame() {
                 current = false;
             }
         })
-        if (current === true) {
+        if (current === true && sentenceInputElement.value == curr_sentence) {
             score++;
             jump();
             scoreScoreDisplay.innerHTML = "Score: " + score;
