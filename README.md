@@ -9,5 +9,17 @@ The typing game, "Run George Run", was made by using 3 different languages, Java
 
 # Test Cases
 To test if the game fully works, our test cases include:
-1. Type in a wrong letter, but the have the same amount of characters as the sentence displayed. Check if the score counter increases. 
-2. Try copying the sentence and pasting it in the typing box.
+1.	Press the start button. Check that the mode buttons show up.
+2.	Check that the modes are accurate. (Easy should have 5 sentences, Medium should have 10 sentences, Hard should have 15 sentences.)
+3.	Check that the countdown timer displays correctly.
+4.	Type in a wrong letter, but have the same number of characters as the sentence displayed. Check if the score counter increases. 
+5.	Try copying the sentence and pasting it in the typing box.
+6.	Check that the timer displays correctly.
+7.	Check that the score increases when you correctly type a sentence in.
+8.	Check that the frog jumps and a rock moves to the left when you correctly type a sentence in. 
+9.	Check that there is background audio starts after hitting start button.
+10.	Check that there is a "ribbit" audio after correctly typing a sentence.
+11.	Check that the timer and score stop increasing when the game is finished.
+12.	Check that a popup appears when the game is finished. (Popup should include WPM, time it took to complete the game, and reset button).
+13.	Check that the WPM is within reason. (We calculated this by using a formula accounts for average length of a word in a sentence.)
+14.	Check that reset button reloads the page.
