@@ -29,6 +29,7 @@ body,
     top: 5rem;
 }
 
+/* 
 .container1 {
     background-color: rgb(43, 72, 201);
     position: absolute;
@@ -213,6 +214,7 @@ body,
     color: white;
 }
 
+/* making the Easy Level button look nice */
 .buttoneasyclass {
     width: 7rem;
     height: 1.6rem;
@@ -227,6 +229,7 @@ body,
     background-size: cover;
 }
 
+/* making the Medium Level button look nice */
 .buttonmediumclass {
     width: 7rem;
     height: 1.6rem;
@@ -240,6 +243,7 @@ body,
     background-size: cover;
 }
 
+/* making the Hard Level button look nice */
 .buttonhardclass {
     width: 7rem;
     height: 1.6rem;
@@ -254,11 +258,12 @@ body,
     background-size: cover;
 }
 
+/* hidden element, we can add this to any class/id and hide the graphic */
 .hidden {
     display: none;
 }
 
-
+/* pond image sizing */
 .game{
     background-image:url("bgd.jpg");
     background-size: contain;
@@ -271,11 +276,16 @@ body,
     overflow-x: hidden;
     z-index: -3;
 }
+
+
+/* frog image sizing */
 #frog{
     position:relative;
     top: 170px;
     left:-20px;
 }
+
+/* animation for frog, in another element so we can use it in a function */
 .animate{
     animation: jump 4s linear;
 }
@@ -286,12 +296,15 @@ body,
     100%{top: 50px;}
 }
 
+
+/* rock image sizing */
 #rock{
     position: relative;
     top: 140px;
     left: 350px;
 }
 
+/* animation for rock, put in another element so we can use it in a function */
 .rockAnimate{
   animation: rock 0.4s linear;
 }
