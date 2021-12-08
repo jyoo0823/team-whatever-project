@@ -4,8 +4,8 @@
 
 /* style for run george run text at top */
 header {
-    position: absolute;
-    top: 0rem;
+    position: absolute;  /* this makes it so that the header is positioned absolutely w ref to the closest parent w relative positioning */
+    top: 0rem; /* dimension from top of page */
     font-size: 3rem;
     font-weight: bolder;
     color: rgb(43, 72, 201);
@@ -14,7 +14,7 @@ header {
 /* style for page background */
 body {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
     min-height: 100vh;
     margin: 0;
@@ -305,6 +305,7 @@ body,
     animation: jump 4s linear;
 }
 @keyframes jump{
+    /* this gives dimensions the frog moves in the 4 seconds */
     0%{top: 50px;}
     33%{top: 100px;}
     66%{top: 100px;}
