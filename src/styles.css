@@ -20,7 +20,7 @@ body {
 }
 
 body,
-.quote-input {
+.sentence-input {
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -115,13 +115,13 @@ body,
     margin-left: -10rem;
 }
 
-.quote-display {
+.sentence-display {
     color: white;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
 
-.quote-input {
+.sentence-input {
     background-color: transparent;
     color: white;
     border: 10px solid rgb(41, 118, 241);
@@ -135,7 +135,7 @@ body,
     border-radius: .5rem;
 }
 
-.quote-input:focus {
+.sentence-input:focus {
     border-color: rgba(43, 220, 156, 0.9);
 }
 
@@ -245,4 +245,42 @@ body,
 
 .hidden {
     display: none;
+}
+
+
+.game{
+    background-image:url("bgd.jpg");
+    background-size: contain;
+    width: 795px;
+    height: 280px;
+    border: 1px solid black;
+    margin: auto;
+    overflow-x: hidden;
+}
+#frog{
+    position:relative;
+    top: 195px;
+}
+.animate{
+    animation: jump 4s linear;
+}
+@keyframes jump{
+    0%{top: 50px;}
+    33%{top: 100px;}
+    66%{top: 100px;}
+    100%{top: 50px;}
+}
+
+#rock{
+    position: relative;
+    top: 160px;
+    left: 350px;
+}
+
+.rockAnimate{
+  animation: rock 0.4s linear;
+}
+@keyframes rock{
+    0%{left: 350px}
+    100%{left: -200px}
 }
