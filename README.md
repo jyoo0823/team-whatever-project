@@ -9,5 +9,5 @@ The typing game, "Run George Run", was made by using 3 different languages, Java
 
 # Test Cases
 To test if the game fully works, our test cases include:
-1. typing in the a wrong letter, but the input has the same amount of characters as the sentence
-2. 
+1. Type in a wrong letter, but the have the same amount of characters as the sentence displayed. Check if the score counter increases. 
+2. Try copying the sentence and pasting it in the typing box.
