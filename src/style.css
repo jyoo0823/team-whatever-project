@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* style for run george run text at top */
 header {
     position: absolute;
     top: 0rem;
@@ -10,6 +11,7 @@ header {
     color: rgb(43, 72, 201);
 }
 
+/* style for page background */
 body {
     display: flex;
     justify-content: center;
@@ -24,12 +26,8 @@ body,
     font-family: 'Courier New', Courier, monospace;
 }
 
-.movable {
-    position: absolute;
-    top: 5rem;
-}
 
-/* 
+/* style for sentence box */
 .container1 {
     background-color: rgb(43, 72, 201);
     position: absolute;
@@ -43,6 +41,7 @@ body,
     font-size: large;
 }
 
+/* style for typing input box */
 .container2 {
     background-color: rgb(41, 118, 241);
     border-radius: .5rem;
@@ -55,6 +54,7 @@ body,
     font-size: large;
 }
 
+/* style for direction box */
 .container3 {
     position: absolute;
     top: 4rem;
@@ -66,6 +66,7 @@ body,
     background-color: rgb(76, 148, 88);
 }
 
+/* text for header in container 3 */
 .howto {
     padding: 5px;
     text-align: center;
@@ -76,6 +77,7 @@ body,
     font-weight: 700;
 }
 
+/* text for directions in container 3 */
 .explain {
     padding: 6px;
     text-align: center;
@@ -86,6 +88,7 @@ body,
     margin-right: 10px;
 }
 
+/* style for score counter */
 .score-display {
     top: 50%;
     left: 50%;
@@ -99,6 +102,7 @@ body,
     font-weight: bold;
 }
 
+/*  style for timer */
 .timer-display {
     top: 50%;
     right: 50%;
@@ -114,6 +118,7 @@ body,
     width: 20rem;
 }
 
+/* style for the countdown to start of game */
 .countdown-display {
     top: 50%;
     left: 50%;
@@ -126,12 +131,14 @@ body,
     font-size: 1.5rem;
 }
 
+/* text for beginning of game */
 .sentence-display {
     color: white;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
 
+/* typing box */
 .sentence-input {
     background-color: transparent;
     color: white;
@@ -146,19 +153,23 @@ body,
     border-radius: .5rem;
 }
 
+/* color when the box is clicked */
 .sentence-input:focus {
     border-color: rgba(43, 220, 156, 0.9);
 }
 
+/* the style for once you type the right letter */
 .good {
     color: rgb(0, 255, 13);
 }
 
+/* the style for once you type the wrong letter */
 .bad {
     color: red;
     text-decoration: underline;
 }
 
+/* style for popup that comes on after the game is over */
 .popup {
     z-index: 1;
     background-color: rgb(77, 56, 19);
@@ -177,6 +188,7 @@ body,
     text-shadow: -0.4px -0.4px 0 rgb(12, 48, 10), 0.4px -0.4px 0 rgb(12, 48, 10), -0.4px 0.4px 0 rgb(12, 48, 10), 0.4px 0.4px rgb(12, 48, 10);
 }
 
+/* style for the wpm text */
 .wpm-score {
     text-shadow: -0.4px -0.4px 0 rgb(12, 48, 10), 0.4px -0.4px 0 rgb(12, 48, 10), -0.4px 0.4px 0 rgb(12, 48, 10), 0.4px 0.4px rgb(12, 48, 10);
     font-size: 1rem;
@@ -184,12 +196,14 @@ body,
     color: rgb(76, 148, 88);
 }
 
+/* style for the time you took text */
 .timescore-display {
     text-shadow: -0.4px -0.4px 0 rgb(12, 48, 10), 0.4px -0.4px 0 rgb(12, 48, 10), -0.4px 0.4px 0 rgb(12, 48, 10), 0.4px 0.4px rgb(12, 48, 10);
     text-align: center;
     color: rgb(76, 148, 88);
 }
 
+/* reset button on popup style */
 .resetbutton {
     display: block;
     margin: auto;
@@ -203,6 +217,7 @@ body,
     text-shadow: -0.4px -0.4px 0 rgb(58, 42, 11), 0.4px -0.4px 0 rgb(58, 42, 11), -0.4px 0.4px 0 rgb(58, 42, 11), 0.4px 0.4px rgb(58, 42, 11);
 }
 
+/* start game button */
 .buttonclass {
     width: 25rem;
     height: 1.6rem;
@@ -214,7 +229,7 @@ body,
     color: white;
 }
 
-/* making the Easy Level button look nice */
+/* Easy Level button */
 .buttoneasyclass {
     width: 7rem;
     height: 1.6rem;
@@ -229,7 +244,7 @@ body,
     background-size: cover;
 }
 
-/* making the Medium Level button look nice */
+/* Medium Level button */
 .buttonmediumclass {
     width: 7rem;
     height: 1.6rem;
@@ -243,7 +258,7 @@ body,
     background-size: cover;
 }
 
-/* making the Hard Level button look nice */
+/* Hard Level button */
 .buttonhardclass {
     width: 7rem;
     height: 1.6rem;
